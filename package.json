@@ -1,5 +1,14 @@
 {
-  "dependencies": {
+  "devDependencies": {
     "sass": "^1.32.4"
-  }
+  },
+  "scripts": {
+    "watch-sass": "sass --watch styles/scss:styles/css"
+  },
+  "name": "simple-quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/snacksncode/simple-quiz.git",
+  "author": "snacksncode <snacksncode@gmail.com>",
+  "license": "MIT"
 }
