@@ -1,11 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --bg_400: #222222;
+  --bg_300: #383838;
+  --txt: #f4f4f4;
+  --accent: #A5B6F2;
+  --accent_darken: #93a2d9;
+  --br: 6px;
+  --shadow_xs: 0 0 1rem rgba(0,0,0,0.10);
+  --shadow_sm: 0 0 1.2rem rgba(0,0,0,0.20);
+  --shadow_md: 0 0 1.5rem rgba(0,0,0,0.30);
+  --fs_sm: 0.9rem;
+  --fs_nm: 1rem;
+  --fs_md: 1.25rem;
+  --fs_lg: 2rem;
 }
 
 html,
 body {
   width: 100%;
   height: 100%;
+  background-color: var(--bg_400);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+}
+
+.quiz {
+  background-color: var(--accent);
+  width: calc(100% - 2rem);
+  height: auto;
+  max-width: 640px;
+  border-radius: var(--br);
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow_md);
+  padding: 2.25rem;
+}
+.quiz__heading {
+  font-size: var(--fs_md);
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  box-shadow: var(--shadow_md);
+  transform: translate(-50%, -75%);
+  left: 50%;
+  width: 80%;
+  height: auto;
+  background: var(--bg_300);
+  color: var(--txt);
+  border-radius: var(--br);
+  padding: 1rem;
+}
+.quiz .answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.quiz .answers .answer-block {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  border: 3px solid rgba(40, 40, 40, 0.3);
+  background: var(--accent_darken);
+  color: var(--txt);
+  border-radius: var(--br);
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: scale(1);
+  position: relative;
+}
+.quiz .answers .answer-block::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
+  content: "";
+  background: transparent;
+  box-shadow: var(--shadow_md);
+  transition: opacity 0.45s ease;
+}
+.quiz .answers .answer-block:hover {
+  transform: scale(1.03);
+}
+.quiz .answers .answer-block:hover::after {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
